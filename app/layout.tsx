@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description:
     "Compassionate mental health therapy and coaching. We help you achieve your potential with qualified professionals. Book a free consultation today.",
   icons: {
-    icon: "/images/logo-icon.png",
+    icon: "/favicon-icon.png",
   },
 };
 
