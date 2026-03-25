@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView, type Variants } from "framer-motion";
+import Image from "next/image";
 import Navigation from "./components/Navigation";
 import FooterComponent from "./components/Footer";
 
@@ -163,10 +164,13 @@ function HeroSection() {
           animate="visible"
           className="relative h-[340px] lg:h-auto lg:min-h-[600px]"
         >
-          <img
+          <Image
             src={HERO_IMAGE}
             alt="Two women smiling together, working on a laptop"
-            className="absolute inset-0 w-full h-full object-cover"
+            fill
+            className="object-cover"
+            priority
+            sizes="(max-width: 1024px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#61007d]/15 to-transparent pointer-events-none" />
         </motion.div>
@@ -218,9 +222,11 @@ function ServicesSection() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="w-[calc(100%+3rem)] md:w-[calc(100%+6rem)] lg:w-[calc(100%+8rem)] -mx-6 md:-mx-12 lg:-mx-16 mt-2"
         >
-          <img
+          <Image
             src="/images/services-illustration.png"
             alt=""
+            width={2400}
+            height={235}
             className="w-full h-auto block"
           />
         </motion.div>
@@ -270,10 +276,12 @@ function AboutSection() {
           transition={{ duration: 0.9, ease: "easeOut" }}
           className="relative h-[380px] lg:h-auto order-last lg:order-first"
         >
-          <img
+          <Image
             src={ABOUT_IMAGE}
             alt="Therapist writing on a wellbeing planning board"
-            className="absolute inset-0 w-full h-full object-cover"
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 50vw"
           />
         </motion.div>
 

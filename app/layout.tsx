@@ -31,8 +31,6 @@ export default function RootLayout({
     <html lang="en" className={`${barlow.variable} ${nunito.variable}`}>
       <body className="antialiased">
         {children}
-        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-        <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
       </body>
     </html>
   );

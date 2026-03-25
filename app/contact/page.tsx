@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView, type Variants } from "framer-motion";
+import Image from "next/image";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
@@ -174,10 +175,12 @@ export default function ContactPage() {
             transition={{ duration: 0.9, ease: "easeOut" }}
             className="relative h-[320px] lg:h-auto min-h-[400px]"
           >
-            <img
+            <Image
               src="/images/contact.png"
               alt=""
-              className="absolute inset-0 w-full h-full object-cover"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#61007d]/30 to-transparent pointer-events-none" />
           </motion.div>
@@ -228,10 +231,11 @@ export default function ContactPage() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 {/* Full name */}
                 <div>
-                  <label style={labelStyle} className="block mb-1.5">
+                  <label htmlFor="name" style={labelStyle} className="block mb-1.5">
                     Full name
                   </label>
                   <input
+                    id="name"
                     type="text"
                     name="name"
                     required
@@ -245,10 +249,11 @@ export default function ContactPage() {
 
                 {/* Email */}
                 <div>
-                  <label style={labelStyle} className="block mb-1.5">
+                  <label htmlFor="email" style={labelStyle} className="block mb-1.5">
                     Email address
                   </label>
                   <input
+                    id="email"
                     type="email"
                     name="email"
                     required
@@ -262,13 +267,14 @@ export default function ContactPage() {
 
                 {/* Phone */}
                 <div>
-                  <label style={labelStyle} className="block mb-1.5">
+                  <label htmlFor="phone" style={labelStyle} className="block mb-1.5">
                     Phone number{" "}
                     <span style={{ color: "#5c4b6e", fontWeight: 400, fontSize: "12px" }}>
                       (optional)
                     </span>
                   </label>
                   <input
+                    id="phone"
                     type="tel"
                     name="phone"
                     value={form.phone}
@@ -281,10 +287,11 @@ export default function ContactPage() {
 
                 {/* Service */}
                 <div>
-                  <label style={labelStyle} className="block mb-1.5">
+                  <label htmlFor="service" style={labelStyle} className="block mb-1.5">
                     I&apos;m interested in...
                   </label>
                   <select
+                    id="service"
                     name="service"
                     value={form.service}
                     onChange={handleChange}
@@ -302,10 +309,11 @@ export default function ContactPage() {
 
                 {/* Message */}
                 <div>
-                  <label style={labelStyle} className="block mb-1.5">
+                  <label htmlFor="message" style={labelStyle} className="block mb-1.5">
                     Message
                   </label>
                   <textarea
+                    id="message"
                     name="message"
                     required
                     rows={5}

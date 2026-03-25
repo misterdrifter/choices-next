@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView, type Variants } from "framer-motion";
+import Image from "next/image";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
@@ -155,10 +156,13 @@ export default function AboutPage() {
             transition={{ duration: 0.9, ease: "easeOut" }}
             className="relative h-[320px] lg:h-auto min-h-[400px]"
           >
-            <img
+            <Image
               src="/images/about.jpg"
               alt=""
-              className="absolute inset-0 w-full h-full object-cover"
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#61007d]/30 to-transparent pointer-events-none" />
           </motion.div>
@@ -225,10 +229,12 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="relative h-[340px] lg:h-auto lg:min-h-[600px]"
           >
-            <img
+            <Image
               src="/images/mission.png"
               alt="About Choices"
-              className="absolute inset-0 w-full h-full object-cover"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </motion.div>
         </div>

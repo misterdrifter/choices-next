@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
@@ -111,10 +112,12 @@ function HeroSection() {
           transition={{ duration: 0.9, ease: "easeOut" }}
           className="relative h-[320px] lg:h-auto min-h-[400px]"
         >
-          <img
+          <Image
             src="/images/hiw.png"
             alt=""
-            className="absolute inset-0 w-full h-full object-cover"
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#61007d]/30 to-transparent pointer-events-none" />
         </motion.div>

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   const footerLinks = {
     Services: [
@@ -21,9 +23,11 @@ export default function Footer() {
       <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12">
           <div className="flex flex-col gap-5">
-            <img
+            <Image
               src="/images/logo-icon.png"
               alt="Choices"
+              width={1369}
+              height={240}
               className="h-8 w-auto object-contain object-left opacity-90"
             />
             <p className="text-[14px] text-white/78 leading-relaxed max-w-[260px] font-regular">

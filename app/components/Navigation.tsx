@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navigation() {
@@ -25,10 +26,13 @@ export default function Navigation() {
     >
       <nav className="w-full px-6 md:px-12 lg:px-16 h-16 md:h-20 flex items-center justify-between">
         <a href="/" className="flex-shrink-0">
-          <img
+          <Image
             src="/images/logo-full.png"
             alt="Choices"
+            width={1370}
+            height={241}
             className="h-8 md:h-10 w-auto object-contain"
+            priority
           />
         </a>
 
