@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "Choices — Mental Health Therapy & Coaching",
   description:
     "Compassionate mental health therapy and coaching. We help you achieve your potential with qualified professionals. Book a free consultation today.",
+  icons: {
+    icon: "/images/logo-icon.png",
+  },
 };
 
 export default function RootLayout({
